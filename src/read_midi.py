@@ -1,99 +1,125 @@
 import pretty_midi
-import collections
-import argparse
 import bisect
+import collections
 
-# ===================== CONFIG =====================
+# ===================== PATHS =====================
+INPUT_MIDI  = "data/test_midis/15. Hartmann's Youkai Girl (sagittarius shikoku).mid"
+OUTPUT_MIDI = "data/quantized/15_hartmann_quantized_1_32.mid"
+OUTPUT_DUR  = "data/quantized/15_hartmann_dur.txt"
+OUTPUT_EVT  = "data/quantized/15_hartmann_events.txt"
 
-INPUT_MIDI_PATH  = "data/test_midis/15. Hartmann's Youkai Girl (sagittarius shikoku).mid"
-OUTPUT_MIDI_PATH = "data/quantized/15_hartmann_quantized_1_32.mid"
+# ===================== PARAMS =====================
+GRID_BEAT = 0.125  # 1/32 beat
 
-GRID_BEAT = 0.125   # 1/32 beat
-# ===== Load MIDI =====
-midi = pretty_midi.PrettyMIDI(INPUT_MIDI_PATH)
-
-print("\nTime signature changes:")
-for ts in midi.time_signature_changes:
-    print(f"  {ts.numerator}/{ts.denominator} at {ts.time:.3f}s")
+# ===================== LOAD ======================
+midi = pretty_midi.PrettyMIDI(INPUT_MIDI)
+beat_times = midi.get_beats()
 
 print("Tempo changes:", midi.get_tempo_changes())
-print("Number of instruments:", len(midi.instruments))
+print("Time signature changes:")
+for ts in midi.time_signature_changes:
+    print(f"  {ts.numerator}/{ts.denominator} at {ts.time:.3f}s")
+print("Instruments:", len(midi.instruments))
 
-# ===== Beat timeline (tempo-aware) =====
-beat_times = midi.get_beats()
-GRID_BEAT = 0.125  # 1/32
+# ===================== UTIL ======================
+def time_to_beat(t, bt):
+    if t <= bt[0]: return 0.0
+    if t >= bt[-1]: return float(len(bt) - 1)
+    i = bisect.bisect_right(bt, t) - 1
+    return i + (t - bt[i]) / (bt[i+1] - bt[i])
 
-# ===== Quantization =====
-def time_to_beat(t, beat_times):
-    """
-    将秒时间映射为连续 beat（支持 tempo change）
-    """
-    if t <= beat_times[0]:
-        return 0.0
-    if t >= beat_times[-1]:
-        return float(len(beat_times) - 1)
-
-    idx = bisect.bisect_right(beat_times, t) - 1
-    t0 = beat_times[idx]
-    t1 = beat_times[idx + 1]
-    # 在线性区间内插值
-    return idx + (t - t0) / (t1 - t0)
-
-def beat_to_time(b, beat_times):
-    """
-    将连续 beat 映射回秒时间
-    """
-    if b <= 0:
-        return beat_times[0]
-    if b >= len(beat_times) - 1:
-        return beat_times[-1]
-
+def beat_to_time(b, bt):
+    if b <= 0: return bt[0]
+    if b >= len(bt) - 1: return bt[-1]
     i = int(b)
-    frac = b - i
-    return beat_times[i] + frac * (beat_times[i + 1] - beat_times[i])
+    f = b - i
+    return bt[i] + f * (bt[i+1] - bt[i])
 
+def quantize_duration_beat(dur, grid):
+    q = round(dur / grid) * grid
+    return max(q, grid)  # 至少一个 grid
 
-def quantize_note(note, beat_times, grid_beat):
-    start_beat = time_to_beat(note.start, beat_times)
-    end_beat   = time_to_beat(note.end, beat_times)
+def map_instrument(inst):
+    if inst.is_drum: return "INST_DRUM"
+    p = inst.program
+    if p < 8: return "INST_PIANO"
+    if 40 <= p < 56: return "INST_STRINGS"
+    if 72 <= p < 80: return "INST_WIND"
+    return "INST_OTHER"
 
-    start_q = round(start_beat / grid_beat) * grid_beat
-    end_q   = round(end_beat   / grid_beat) * grid_beat
-
-    # 兜底：至少一个 grid
-    if end_q <= start_q:
-        end_q = start_q + grid_beat
-
-    note.start = beat_to_time(start_q, beat_times)
-    note.end   = beat_to_time(end_q,   beat_times)
-
+# ===================== QUANTIZE ==================
 for inst in midi.instruments:
     for note in inst.notes:
-        quantize_note(note, beat_times, GRID_BEAT)
+        sb = time_to_beat(note.start, beat_times)
+        eb = time_to_beat(note.end,   beat_times)
 
-for idx, inst in enumerate(midi.instruments):
-    if not inst.notes:
-        continue
+        start_q = round(sb / GRID_BEAT) * GRID_BEAT
+        dur_q   = quantize_duration_beat(eb - sb, GRID_BEAT)
+        end_q   = start_q + dur_q
 
-    pitches = [note.pitch for note in inst.notes]
-    durations_sec = [note.end - note.start for note in inst.notes]
+        note.start = beat_to_time(start_q, beat_times)
+        note.end   = beat_to_time(end_q,   beat_times)
 
-    print(f"\nInstrument {idx}")
-    print(f"  Program: {inst.program}")
-    print(f"  Is drum: {inst.is_drum}")
-    print(f"  Notes: {len(inst.notes)}")
-    print(f"  Pitch range: {min(pitches)} - {max(pitches)}")
-    print(
-        f"  Duration (sec): "
-        f"min={min(durations_sec):.3f}, "
-        f"max={max(durations_sec):.3f}, "
-        f"mean={sum(durations_sec)/len(durations_sec):.3f}"
-    )
+        # ★ 权威 duration（beat 域），供后续使用
+        note._dur_beat = dur_q
+        note._start_beat_q = start_q
 
+# ===================== EXPORT MIDI ===============
+qm = pretty_midi.PrettyMIDI()
+qm.instruments = midi.instruments
+qm.write(OUTPUT_MIDI)
+print("Quantized MIDI:", OUTPUT_MIDI)
 
-# ===== Export quantized MIDI =====
-quantized_midi = pretty_midi.PrettyMIDI()
-quantized_midi.instruments = midi.instruments
-quantized_midi.write(OUTPUT_MIDI_PATH)
+# ===================== EXPORT DUR =================
+dur_counter = collections.Counter()
+for inst in midi.instruments:
+    for note in inst.notes:
+        dur_counter[note._dur_beat] += 1
 
-print(f"\nQuantized MIDI written to: {OUTPUT_MIDI_PATH}")
+with open(OUTPUT_DUR, "w", encoding="utf-8") as f:
+    f.write("DUR (beat)  count\n")
+    for d, c in dur_counter.most_common():
+        f.write(f"{d:<8} {c}\n")
+
+print("DUR list:", OUTPUT_DUR)
+
+# ===================== EXPORT EVENTS ==============
+# collect time-sig events on beat timeline
+ts_events = []
+for ts in midi.time_signature_changes:
+    b = time_to_beat(ts.time, beat_times)
+    ts_events.append((b, f"TIME_SIG_{ts.numerator}_{ts.denominator}"))
+ts_events.sort(key=lambda x: x[0])
+
+# collect notes
+notes = []
+for inst in midi.instruments:
+    inst_evt = map_instrument(inst)
+    for note in inst.notes:
+        notes.append((
+            note._start_beat_q,
+            inst_evt,
+            note.pitch,
+            note._dur_beat
+        ))
+notes.sort(key=lambda x: x[0])
+
+events = []
+ti = 0
+cur_inst = None
+for sb, inst_evt, pitch, dur in notes:
+    while ti < len(ts_events) and ts_events[ti][0] <= sb:
+        events.append(ts_events[ti][1])
+        ti += 1
+    if inst_evt != cur_inst:
+        events.append(inst_evt)
+        cur_inst = inst_evt
+    events.append(f"NOTE_ON_{pitch}")
+    events.append(f"DUR_{dur}")
+
+with open(OUTPUT_EVT, "w", encoding="utf-8") as f:
+    for e in events:
+        f.write(e + "\n")
+
+print("Event doc:", OUTPUT_EVT)
+print("Total events:", len(events))

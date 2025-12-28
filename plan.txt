@@ -1,0 +1,78 @@
+Day 1：环境 &工具
+
+Python 3.9+
+
+安装：
+
+pip install pretty_midi miditoolkit numpy
+
+
+能：
+
+读一个 MIDI
+
+打印音符列表
+
+Day 2：事件抽取（核心）
+
+实现一个函数：
+
+midi_to_events(midi_file) -> List[Event]
+
+
+事件类型先只做 4 个：
+
+NOTE_ON(pitch)
+
+NOTE_OFF(pitch)
+
+TIME_SHIFT(dt)
+
+VELOCITY(v)
+
+👉 先简单，不要贪
+
+Day 3：事件 → token id
+
+建 vocabulary
+
+映射：
+
+Event → int
+
+保存为 .npy
+
+Day 4：token → MIDI（非常重要）
+
+实现反向函数：
+
+events_to_midi(events) -> midi_file
+
+
+你要验证：
+
+原 MIDI → tokens → MIDI
+
+能听，且不明显变形
+
+👉 这一关不过，后面全部不要做
+
+Day 5：加约束（防崩）
+
+限制最大 TIME_SHIFT
+
+防止 NOTE_OFF 丢失
+
+合并极短音符
+
+Day 6–7：小规模测试
+
+用 10–20 个 MIDI
+
+批量跑：
+
+正向
+
+反向
+
+听结果

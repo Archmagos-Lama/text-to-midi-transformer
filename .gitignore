@@ -1,0 +1,22 @@
+# ===== Python 虚拟环境 =====
+venv/
+.env/
+.env.*
+
+# ===== Python 缓存 =====
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# ===== Jupyter =====
+.ipynb_checkpoints/
+
+# ===== 编辑器 / 系统 =====
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ===== 日志 =====
+*.log

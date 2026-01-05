@@ -1,0 +1,315 @@
+data/clean_midi\10cc\Dreadlock Holiday.4.mid
+data/clean_midi\3T\Why.mid
+data/clean_midi\4 Non Blondes\What's Up.5.mid
+data/clean_midi\a-ha\Take On Me.1.mid
+data/clean_midi\Aaron Neville\Tell It Like It Is.mid
+data/clean_midi\ABBA\I've Been Waiting For You.mid
+data/clean_midi\ABBA\One Of Us.mid
+data/clean_midi\ABBA\Take a Chance on Me.3.mid
+data/clean_midi\ABBA\Thank You for the Music.2.mid
+data/clean_midi\ABBA\Voulez Vous.1.mid
+data/clean_midi\Aerosmith\Dream On.mid
+data/clean_midi\Aerosmith\Pink.3.mid
+data/clean_midi\Alice in Chains\Sludge Factory.mid
+data/clean_midi\Alison Moyet\All Cried Out.mid
+data/clean_midi\Alpentrio Tirol\Alpentrio Hitmix_ Alpentrio-Medley   Hast a bisserl Zeit fur mi   Tepperter Bua   Hallo kleine Traumfrau   Vergiss die Liebe nicht   Ich freu' mich schon auf dich   Ich hab was ganz lieb's traumt von dir   Geheimnis der Johannesnacht   Engel v. Ma.1.mid
+data/clean_midi\Alpentrio Tirol\Alpentrio Hitmix_ Alpentrio-Medley   Hast a bisserl Zeit fur mi   Tepperter Bua   Hallo kleine Traumfrau   Vergiss die Liebe nicht   Ich freu' mich schon auf dich   Ich hab was ganz lieb's traumt von dir   Geheimnis der Johannesnacht   Engel v. Ma.mid
+data/clean_midi\Amedeo Minghi\Decenni.1.mid
+data/clean_midi\Amos, Tori\The Wrong Band.mid
+data/clean_midi\Andre Brasseur\Early Bird Satellite.1.mid
+data/clean_midi\Andre Hazes\Ik meen 't.2.mid
+data/clean_midi\Aqua\Dr Jones.mid
+data/clean_midi\Asia\Don't Cry.1.mid
+data/clean_midi\Barry Manilow\Copa Cabana (disco).mid
+data/clean_midi\Basie\I Left My Heart in San Francisco.mid
+data/clean_midi\Beastie Boys\Girls.mid
+data/clean_midi\Bee Gees\How Can You Mend a Broken Heart.1.mid
+data/clean_midi\Bee Gees\Stayin Alive.3.mid
+data/clean_midi\Bee Gees\Too Much Heaven.mid
+data/clean_midi\Bernstein Leonard\West Side Story_ Medley.1.mid
+data/clean_midi\Billy Joel\Movin' Out (Anthony's Song).mid
+data/clean_midi\Billy Joel\Pressure.2.mid
+data/clean_midi\Billy Joel\Pressure.mid
+data/clean_midi\Billy Swan\I Can Help.1.mid
+data/clean_midi\Blondie\Dreaming.mid
+data/clean_midi\Bon Jovi\Blaze of Glory.2.mid
+data/clean_midi\Boyz II Men\End of the Road.2.mid
+data/clean_midi\Brian McKnight\On the Down Low.mid
+data/clean_midi\Bruce Springsteen\Tenth Avenue Freeze-Out.1.mid
+data/clean_midi\Bryan Adams\(Everything I Do) I Do It For You.7.mid
+data/clean_midi\Bryson\Tonight I Celebrate My Love For You.mid
+data/clean_midi\Buddy Holly\Peggy Sue.1.mid
+data/clean_midi\Bush\Glycerine.1.mid
+data/clean_midi\Busta Rhymes\Woo Hah.mid
+data/clean_midi\Cabrel Francis\Encore et encore.mid
+data/clean_midi\Cabrel Francis\Question d'equilibre.mid
+data/clean_midi\Camel\The Snow Goose.1.mid
+data/clean_midi\Camel\The Snow Goose.mid
+data/clean_midi\Carpenters\Medley (They long to Be) Close to You   For All We Know   Top of the World   Ticket to Ride   Only Yesterday   I Wont Last a Day Without You   Hurting Each Other   Superstar   Rainy Days and Mondays   Goodbye to Love.mid
+data/clean_midi\Celine Dion\That's The Way It Is.mid
+data/clean_midi\Celine Dion\Where Does My Heart Beat Now.1.mid
+data/clean_midi\Celine Dion\Where Does My Heart Beat Now.mid
+data/clean_midi\Chic\Chic Mystique.mid
+data/clean_midi\Chic\Take My Love.mid
+data/clean_midi\Clayderman Richard\Ballade Pour Adeline.mid
+data/clean_midi\Cocciante\Ammassati e distanti.mid
+data/clean_midi\Commodores\Three Times a Lady.1.mid
+data/clean_midi\Coolio\Gangsta's Paradise.3.mid
+data/clean_midi\Cream\Strange Brew.1.mid
+data/clean_midi\Crow Sheryl\Tomorrow Never Dies.mid
+data/clean_midi\Daft Punk\Da Funk.mid
+data/clean_midi\Dalla\Anna e Marco.mid
+data/clean_midi\Dan Fogelberg\Leader Of The Band.mid
+data/clean_midi\Darin Bobby\Splish Splash.mid
+data/clean_midi\Dee\The Legend Of Xanadu.1.mid
+data/clean_midi\Depeche Mode\Shake the Disease.mid
+data/clean_midi\Earth, Wind & Fire\September (bonus track).4.mid
+data/clean_midi\Elton John\A Word in Spanish.1.mid
+data/clean_midi\Elton John\Nikita.mid
+data/clean_midi\Emerson, Lake & Palmer\Fanfare for the Common Man.2.mid
+data/clean_midi\Emerson, Lake & Palmer\Hoedown.mid
+data/clean_midi\Energy 52\Cafe del Mar.mid
+data/clean_midi\Enya\Bard Dance.mid
+data/clean_midi\Eric Clapton\Tears in Heaven.7.mid
+data/clean_midi\Eurythmics\Sweet Dreams.4.mid
+data/clean_midi\Eurythmics\Who's That Girl.mid
+data/clean_midi\Frank Sinatra\Summer Wind.mid
+data/clean_midi\Garbage\Cherry Lips.mid
+data/clean_midi\Garbage\Stupid Girl.3.mid
+data/clean_midi\Genesis\Abacab.3.mid
+data/clean_midi\Genesis\Misunderstanding.3.mid
+data/clean_midi\Gina G\Ooh Ahh Just a Little Bit.mid
+data/clean_midi\Gompie\Alice (Who the X Is Alice) (Living Next Door to Alice).mid
+data/clean_midi\Henry Arland\Rosenmelodie.mid
+data/clean_midi\Henry Mancini\Moon River.mid
+data/clean_midi\Huey Lewis & The News\The Power of Love.mid
+data/clean_midi\Jackson Michael\Childhood.mid
+data/clean_midi\Jackson Michael\Don't Stop 'Til You Get Enough.mid
+data/clean_midi\Jackson Michael\I'll Be There.mid
+data/clean_midi\Jackson Michael\Smooth Criminal.4.mid
+data/clean_midi\Jackson Michael\Smooth Criminal.mid
+data/clean_midi\Jackson Michael\Thriller.3.mid
+data/clean_midi\Jackson Michael\You Are Not Alone.mid
+data/clean_midi\Jamiroquai\Canned Heat.1.mid
+data/clean_midi\Jean Michel Jarre\Calypso, Part 2.mid
+data/clean_midi\Jennifer Lopez\If You Had My Love.mid
+data/clean_midi\Jethro Tull\Rainbow Blues.mid
+data/clean_midi\Jimi Hendrix\Purple Haze.2.mid
+data/clean_midi\John Elton\Nikita.2.mid
+data/clean_midi\John Paul Young\Love is in the Air.3.mid
+data/clean_midi\Johnny Mercer\Come Rain or Come Shine.mid
+data/clean_midi\Journey\Any Way You Want It.mid
+data/clean_midi\Journey\Lights.mid
+data/clean_midi\Journey\Lovin' Touchin' Squeezin'.mid
+data/clean_midi\Jovanotti\Penso Positivo.mid
+data/clean_midi\Juan Luis Guerra\La Bilirrubina.1.mid
+data/clean_midi\Kalua Beach Boys\There's No Place Like Hawaii.mid
+data/clean_midi\Kylie Minogue\Better the Devil.mid
+data/clean_midi\Kylie Minogue\Especially for You.1.mid
+data/clean_midi\Last\Rosamunde.1.mid
+data/clean_midi\Led Zeppelin\Custard Pie.mid
+data/clean_midi\Led Zeppelin\In The Evening.mid
+data/clean_midi\Led Zeppelin\Stairway To Heaven.mid
+data/clean_midi\Lenny Kravitz\I Belong To You.mid
+data/clean_midi\Level 42\Lessons in Love.2.mid
+data/clean_midi\Live\Selling the Drama.mid
+data/clean_midi\LL Cool J\Hey Lover.mid
+data/clean_midi\Los Del Rio\Macarena.1.mid
+data/clean_midi\Los Lobos\La Bamba.mid
+data/clean_midi\Madonna\Deeper and Deeper.mid
+data/clean_midi\Madonna\Like A Virgin.mid
+data/clean_midi\Madonna\Rain.4.mid
+data/clean_midi\Marc Anthony\Vivir Lo Nuestro.mid
+data/clean_midi\Mariah Carey\Forever.mid
+data/clean_midi\Mariah Carey\Long Ago.mid
+data/clean_midi\Marley Bob\Iron Lion Zion.mid
+data/clean_midi\Matt Bianco\Half a Minute.mid
+data/clean_midi\McDonald\Yah Mo B There.mid
+data/clean_midi\Metallica\(Anesthesia)-Pulling Teeth.mid
+data/clean_midi\Metallica\The Shortest Straw.1.mid
+data/clean_midi\Metallica\The Unforgiven.3.mid
+data/clean_midi\Metallica\The Unforgiven.5.mid
+data/clean_midi\Miami Sound Machine\Here We Are.mid
+data/clean_midi\Miller\When Sunny Gets Blue.mid
+data/clean_midi\Morton Jelly Roll\Frog-I-More Rag.mid
+data/clean_midi\Neil Diamond\(Encore) Cracklin' Rose.mid
+data/clean_midi\Neil Diamond\Hello Again.mid
+data/clean_midi\Nek\Se io non avessi te.2.mid
+data/clean_midi\Nelly\Country Grammar (Hot ...).mid
+data/clean_midi\Nick Kamen\I Promised Myself.1.mid
+data/clean_midi\Nini Rosso\Il Silenzio.1.mid
+data/clean_midi\Nirvana\(New Wave) Polly.mid
+data/clean_midi\Nirvana\All Apologies.1.mid
+data/clean_midi\Nirvana\Aneurysm.mid
+data/clean_midi\Nirvana\Been a Son.mid
+data/clean_midi\Nirvana\Dive.mid
+data/clean_midi\Nirvana\Downer.1.mid
+data/clean_midi\Nirvana\Drain You.mid
+data/clean_midi\Nirvana\Dumb.2.mid
+data/clean_midi\Nirvana\Frances Farmer Will Have Her Revenge on Seattle.1.mid
+data/clean_midi\Nirvana\Hairspray Queen.1.mid
+data/clean_midi\Nirvana\Heart-Shaped Box.mid
+data/clean_midi\Nirvana\Lounge Act.mid
+data/clean_midi\Nirvana\Love Buzz.mid
+data/clean_midi\Nirvana\Mexican Seafood.mid
+data/clean_midi\Nirvana\Milk It.1.mid
+data/clean_midi\Nirvana\Mr. Moustache.mid
+data/clean_midi\Nirvana\Negative Creep.mid
+data/clean_midi\Nirvana\Pennyroyal Tea.2.mid
+data/clean_midi\Nirvana\Polly.1.mid
+data/clean_midi\Nirvana\Radio Friendly Unit Shifter.1.mid
+data/clean_midi\Nirvana\Scentless Apprentice.mid
+data/clean_midi\Nirvana\Sliver.2.mid
+data/clean_midi\Nirvana\Smells Like Teen Spirit.8.mid
+data/clean_midi\Nirvana\Son of a Gun.2.mid
+data/clean_midi\Nirvana\Swap Meet.mid
+data/clean_midi\Nirvana\Territorial Pissings.mid
+data/clean_midi\Nirvana\tourette's.1.mid
+data/clean_midi\Nirvana\Turnaround.mid
+data/clean_midi\Nomadi\Io vagabondo.2.mid
+data/clean_midi\Nomadi\Io vagabondo.4.mid
+data/clean_midi\Parker Charlie\Donna Lee.mid
+data/clean_midi\Pet Shop Boys\Always on My Mind   In My House.3.mid
+data/clean_midi\Peter Gabriel\Solsbury Hill.1.mid
+data/clean_midi\Peter Gabriel\Solsbury Hill.mid
+data/clean_midi\Peter, Paul & Mary\Puff.1.mid
+data/clean_midi\Phish\Taste.mid
+data/clean_midi\Pink Floyd\Echoes.1.mid
+data/clean_midi\Pink Floyd\Echoes.mid
+data/clean_midi\Pink Floyd\Hey You.mid
+data/clean_midi\Pink Floyd\High Hopes.2.mid
+data/clean_midi\Pink Floyd\Nobody Home.mid
+data/clean_midi\Pink Floyd\The Trial.1.mid
+data/clean_midi\Pink Floyd\Wish You Were Here.mid
+data/clean_midi\Pooh\Il cielo e blu sopra le nuvole.mid
+data/clean_midi\R.E.M_\Nightswimming.mid
+data/clean_midi\Radiohead\Airbag.mid
+data/clean_midi\Radiohead\Climbing Up the Walls.mid
+data/clean_midi\Radiohead\Karma Police.mid
+data/clean_midi\Radiohead\Subterranean Homesick Alien.mid
+data/clean_midi\Rammstein\Stripped.mid
+data/clean_midi\Rascel\Arrividerci Roma.mid
+data/clean_midi\Rednex\The Ultimate Rednex Mega Mix, Part 3_ Cotton Eye Joe.mid
+data/clean_midi\Rene Carol\Rote Rosen rote Lippen roter Wein.mid
+data/clean_midi\Rene Froger\Thunder in My Heart.mid
+data/clean_midi\Right Said Fred\Don't Talk Just Kiss.mid
+data/clean_midi\Rob Zombie\Demonoid Phenomenon.mid
+data/clean_midi\Robert Palmer\I'll Be Your Baby Tonight.1.mid
+data/clean_midi\Robert Palmer\Mercy Mercy Me   I Want You.mid
+data/clean_midi\Ross\When You Tell Me That You Love Me.mid
+data/clean_midi\Rossi Vasco\Vivere.mid
+data/clean_midi\Roxette\It Must Have Been Love (live studio).3.mid
+data/clean_midi\Roxette\The Look.mid
+data/clean_midi\Roy Orbison\Oh Pretty Woman.2.mid
+data/clean_midi\Rush\Broon's Bane.1.mid
+data/clean_midi\Rush\Closer to the Heart.3.mid
+data/clean_midi\Rush\Cygnus X-1, Book II_ Hemispheres_ I. Prelude   II. Apollo_ Bringer of Wisdom   III. Dionysus_ Bringer of Love   IV. Armageddon_ The Battle of Heart and Mind   V. Cygnus_ Bringer of Balance   VI. The Sphere_ A Kind of Dream.mid
+data/clean_midi\Rush\Leave That Thing Alone.mid
+data/clean_midi\Ryan Paris\La Dolce Vita.1.mid
+data/clean_midi\Sam Cooke\Twisting the Night Away.mid
+data/clean_midi\Sarah McLachlan\Adia.1.mid
+data/clean_midi\Scott McKenzie\Forrest Gump_ San Francisco (Be Sure to Wear Some Flowers in Your Hair).1.mid
+data/clean_midi\Shakatak\Night Birds.1.mid
+data/clean_midi\Shirley Bassey\Big Spender.mid
+data/clean_midi\Simon & Garfunkel\The Sound of Silence.2.mid
+data/clean_midi\Sinatra\Where or When.mid
+data/clean_midi\Stan Kenton\Here's That Rainy Day.mid
+data/clean_midi\Steppenwolf\Born To Be Wild.3.mid
+data/clean_midi\Stevens Shakin_\You Drive Me Crazy.1.mid
+data/clean_midi\Sting\Fields of Gold.1.mid
+data/clean_midi\Sting\Fields of Gold.7.mid
+data/clean_midi\Styx\Come Sail Away.4.mid
+data/clean_midi\Supertramp\Bloody Well Right.mid
+data/clean_midi\Supertramp\The Logical Song.7.mid
+data/clean_midi\Survivor\Is This Love.mid
+data/clean_midi\The Alan Parsons Project\Sirius   Eye in the Sky.mid
+data/clean_midi\The Beach Boys\Good Vibrations.6.mid
+data/clean_midi\The Beach Boys\I Get Around.2.mid
+data/clean_midi\The Beatles\All You Need Is Love.3.mid
+data/clean_midi\The Beatles\Every Little Thing.mid
+data/clean_midi\The Beatles\Fixing a Hole.mid
+data/clean_midi\The Beatles\Fool on the Hill.2.mid
+data/clean_midi\The Beatles\Fool on the Hill.mid
+data/clean_midi\The Beatles\Get Back.3.mid
+data/clean_midi\The Beatles\Let It Be.5.mid
+data/clean_midi\The Beatles\Octopus's Garden.mid
+data/clean_midi\The Beatles\Paperback Writer.4.mid
+data/clean_midi\The Beatles\Ticket to Ride.6.mid
+data/clean_midi\The Boomtown Rats\I Don't Like Monday's.1.mid
+data/clean_midi\The Cranberries\Animal Instinct.mid
+data/clean_midi\The Cranberries\Promises.1.mid
+data/clean_midi\The Doors\Riders on the Storm.1.mid
+data/clean_midi\The Doors\The Crystal Ship.3.mid
+data/clean_midi\The Four Seasons\Rag Doll.mid
+data/clean_midi\The Four Seasons\Walk Like A Man.mid
+data/clean_midi\The KLF\Justified and Ancient.1.mid
+data/clean_midi\The Knack\My Sharona.1.mid
+data/clean_midi\The Offspring\Gone Away.1.mid
+data/clean_midi\The Offspring\No Hero.mid
+data/clean_midi\The Outhere Brothers\Don't Stop (Wiggle Wiggle).1.mid
+data/clean_midi\The Platters\Only You.5.mid
+data/clean_midi\The Police\Every Little Thing She Does Is Magic.4.mid
+data/clean_midi\The Police\So Lonely.1.mid
+data/clean_midi\The Prodigy\Climbatize.mid
+data/clean_midi\The Prodigy\Wind It Up.mid
+data/clean_midi\The Rolling Stones\The Last Time.mid
+data/clean_midi\The Smashing Pumpkins\Cherub Rock.mid
+data/clean_midi\The Stylistics\I'm Stone in Love With You.mid
+data/clean_midi\Theodorakis Mikis\Zorba's Dance.1.mid
+data/clean_midi\Third Eye Blind\Semi-Charmed Life.1.mid
+data/clean_midi\Third Eye Blind\Semi-Charmed Life.mid
+data/clean_midi\Tom Jones\Delilah.5.mid
+data/clean_midi\Tool\Flood.mid
+data/clean_midi\Toto\I Won't Hold You Back.mid
+data/clean_midi\TURNER TINA\Notbush City Limits.1.mid
+data/clean_midi\U2\Walk On.mid
+data/clean_midi\U2\Where the Streets Have No Name.7.mid
+data/clean_midi\UB40\Homely Girl.mid
+data/clean_midi\Us3\Cantaloop.1.mid
+data/clean_midi\Van Halen\Jump.5.mid
+data/clean_midi\Van Halen\Me Wise Magic.mid
+data/clean_midi\Van Halen\Right Now.1.mid
+data/clean_midi\Vangelis\Chariots of Fire.5.mid
+data/clean_midi\Whigfield\Saturday Night.1.mid
+data/clean_midi\Whitney Houston\I'm Every Woman.1.mid
+data/clean_midi\Whitney Houston\Saving All My Love For You.2.mid
+data/clean_midi\Wonder Stevie\Happy Birthday.mid
+data/clean_midi\Wonder Stevie\Sir Duke.1.mid
+data/clean_midi\Yanni\Aria.1.mid
+data/clean_midi\Yanni\Marching Season.1.mid
+data/clean_midi\Yanni\Secret Vows.1.mid
+data/clean_midi\Yanni\Swept Away.mid
+data/clean_midi\Yanni\The Rain Must Fall.1.mid
+data/clean_midi\Yazz & plastic population\The Only Way Is Up.1.mid
+data/touhou_midi_collection\1 - Shooter Games\1 - Highly Responsive to Prayers\11. Now, Until the Moment You Die (Blargzargo Hlaaluington and ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\1 - Highly Responsive to Prayers\11. Now, Until the Moment You Die (unknown).mid
+data/touhou_midi_collection\1 - Shooter Games\2 - Story of Eastern Wonderland\2. Hakurei ~ Eastern Wind (TouhouMIDICreator - Ver. 2).mid
+data/touhou_midi_collection\1 - Shooter Games\8 - Imperishable Night\1. Eternal Night Vignette ~ Eastern Night (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\8 - Imperishable Night\10. Love-colored Master Spark (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\8 - Imperishable Night\11. Cinderella Cage ~ Kagome-Kagome (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\8 - Imperishable Night\12. Lunatic Eyes ~ Invisible Full Moon (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\8 - Imperishable Night\13. Voyage 1969 (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\8 - Imperishable Night\14. Gensokyo Millennium ~ History of the Moon (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\8 - Imperishable Night\15. Flight in the Bamboo Cutter ~ Lunatic Princess (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\8 - Imperishable Night\16. Voyage 1970 (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\8 - Imperishable Night\17. Extend Ash ~ Person of Hourai (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\8 - Imperishable Night\18. Reach for the Moon, Immortal Smoke (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\8 - Imperishable Night\19. Evening Primrose (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\8 - Imperishable Night\2. Illusionary Night ~ Ghostly Eyes (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\8 - Imperishable Night\20. Eternal Dream ~ Mystical Maple (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\8 - Imperishable Night\21. Eastern Youkai Beauty (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\8 - Imperishable Night\3. Wriggling Autumn Moon ~ Mooned Insect (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\8 - Imperishable Night\4. Song of the Night Sparrow ~ Night Bird (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\8 - Imperishable Night\5. Deaf to All but the Song (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\8 - Imperishable Night\6. Nostalgic Blood of the East ~ Old World (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\8 - Imperishable Night\7. Plain Asia (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\8 - Imperishable Night\8. Retribution for the Eternal Night ~ Imperishable Night (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\8 - Imperishable Night\9. Maiden's Capriccio ~ Dream Battle (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\9 - Phantasmagoria of Flower View\1. Flower Viewing Mound ~ Higan Retour (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\9 - Phantasmagoria of Flower View\16. The Mound Where the Flowers Reflect (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\9 - Phantasmagoria of Flower View\2. Spring Lane ~ Colorful Path (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\9 - Phantasmagoria of Flower View\3. Oriental Dark Flight (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\9 - Phantasmagoria of Flower View\4. Flowering Night (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\9 - Phantasmagoria of Flower View\7. Adventure of the Lovestruck Tomboy (ZUN).mid
+data/touhou_midi_collection\1 - Shooter Games\9 - Phantasmagoria of Flower View\9. Deaf to All but the Song ~ Flower Mix (ZUN).mid
+data/touhou_midi_collection\5 - Other-Misc\INDIE Live Expo ZUN\Independent Simulacrum (ABing).mid

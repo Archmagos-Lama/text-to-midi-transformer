@@ -20,3 +20,7 @@ Thumbs.db
 
 # ===== 日志 =====
 *.log
+
+
+data/clean_midi/
+data/touhou_midi_collection/

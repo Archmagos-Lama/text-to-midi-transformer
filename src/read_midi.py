@@ -40,12 +40,20 @@ def quantize_duration_beat(dur, grid):
     return max(q, grid)  # 至少一个 grid
 
 def map_instrument(inst):
-    if inst.is_drum: return "INST_DRUM"
+    if inst.is_drum:
+        return "INST_DRUM"
     p = inst.program
-    if p < 8: return "INST_PIANO"
-    if 40 <= p < 56: return "INST_STRINGS"
-    if 72 <= p < 80: return "INST_WIND"
+    if p < 8:
+        return "INST_PIANO"
+    if 32 <= p < 40:
+        return "INST_BASS"
+    if 40 <= p < 56:
+        return "INST_STRINGS"
+    if 72 <= p < 80:
+        return "INST_WIND"
     return "INST_OTHER"
+
+
 
 # ===================== QUANTIZE ==================
 for inst in midi.instruments:

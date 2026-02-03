@@ -13,7 +13,7 @@ warnings.filterwarnings(
 # ===================== CONFIG =====================
 
 INPUT_ROOTS = [
-    "data/touhou_midi_collection/7 - Fan and Related Games/Fan Games/MegaMari"
+    "data/touhou_midi_collection"
 ]
 
 OUT_MIDI_ROOT  = "data/quantized_midi"
@@ -23,6 +23,33 @@ GRID_BEAT = 0.125  # 1/32 beat
 
 os.makedirs(OUT_MIDI_ROOT, exist_ok=True)
 os.makedirs(OUT_EVENT_ROOT, exist_ok=True)
+
+def make_out_path(in_path, in_root, out_root, new_ext=".txt"):
+    """
+    将 in_path 相对 in_root 的路径，原样映射到 out_root
+    """
+    rel = os.path.relpath(in_path, in_root)
+    rel = os.path.splitext(rel)[0] + new_ext
+    out_path = os.path.join(out_root, rel)
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    return out_path
+
+
+# ===================== INST -> PROGRAM (FOR MIDI RENDER ONLY) =====================
+
+DEFAULT_PROGRAM_FOR_INST = {
+    "INST_PIANO":   0,    # Acoustic Grand Piano
+    "INST_LEAD":    81,   # Lead 2 (saw)
+    "INST_PAD":     89,   # Warm Pad
+    "INST_STRINGS": 48,   # String Ensemble
+    "INST_WIND":    73,   # Flute
+    "INST_BASS":    33,   # Electric Bass (finger)
+    "INST_PERC":    12,   # Marimba
+    "INST_DRUM":    0,    # ignored when is_drum=True
+    "INST_FX":      99,   # Atmosphere
+    "INST_OTHER":   0
+}
+
 
 # ===================== QUANTIZATION UTILS =====================
 
@@ -69,11 +96,25 @@ def normalize_time_sig(numer, denom):
     return "OTHER"
 
 BASE_DURS = [
-    0.125, 0.25, 0.375, 0.5,
-    0.75, 1.0, 1.5, 2.0,
-    3.0, 4.0, 6.0, 8.0,
-    16.0
+    # straight
+    0.125, 0.25, 0.5,
+
+    # swing 8th (≈2:1)
+    1/3,        # ≈0.333
+    2/3,        # ≈0.667
+
+    # dotted / compound
+    0.375,      # dotted 16th
+    0.75,       # dotted 8th
+
+    # beat-level
+    1.0, 1.5, 2.0,
+    3.0, 4.0,
+
+    # long
+    6.0, 8.0, 16.0
 ]
+
 
 def bucket_duration(d):
     return min(BASE_DURS, key=lambda x: abs(x - d))
@@ -133,19 +174,20 @@ def rel_out_path(in_path, in_root, out_root, ext):
 
 # ===================== MAIN =====================
 
-total = 0
-bad = 0
+total_files = 0
+bad_files   = 0
 
 for root in INPUT_ROOTS:
     for midi_path in iter_midi_files(root):
-        total += 1
-        if total % 50 == 0:
-            print(f"[quantize] processed {total}, bad {bad}")
+        total_files += 1
+        if total_files % 50 == 0:
+            print(f"[quantize] processed {total_files}, bad {bad_files}")
 
+            
         try:
             midi = pretty_midi.PrettyMIDI(midi_path)
         except Exception:
-            bad += 1
+            bad_files += 1
             continue
 
         beat_times = midi.get_beats()
@@ -171,12 +213,45 @@ for root in INPUT_ROOTS:
                 note._start_beat = start_q
                 note._dur_beat   = dur_q
 
-        # ---------- export quantized MIDI ----------
-        out_midi = rel_out_path(midi_path, root, OUT_MIDI_ROOT, ".mid")
+        # ---------- export quantized MIDI (INST-based, clean) ----------
+
         qm = pretty_midi.PrettyMIDI()
-        qm.instruments = midi.instruments
         qm.time_signature_changes = midi.time_signature_changes
+
+        inst_tracks = {}
+
+        def get_track(inst_evt):
+            if inst_evt not in inst_tracks:
+                is_drum = (inst_evt == "INST_DRUM")
+                program = DEFAULT_PROGRAM_FOR_INST.get(inst_evt, 0)
+
+                inst_tracks[inst_evt] = pretty_midi.Instrument(
+                    program=program,
+                    is_drum=is_drum,
+                    name=inst_evt
+                )
+                qm.instruments.append(inst_tracks[inst_evt])
+            return inst_tracks[inst_evt]
+
+        # 收集所有量化后的 note，按 INST 写回
+        for inst in midi.instruments:
+            inst_evt = map_instrument(inst)
+            tr = get_track(inst_evt)
+
+            for note in inst.notes:
+                tr.notes.append(
+                    pretty_midi.Note(
+                        velocity=note.velocity,
+                        pitch=note.pitch,
+                        start=note.start,
+                        end=note.end
+                    )
+                )
+
+        out_midi = make_out_path(midi_path, root, OUT_MIDI_ROOT, ".mid")
         qm.write(out_midi)
+
+
 
         # ---------- export events ----------
         events = []
@@ -216,11 +291,12 @@ for root in INPUT_ROOTS:
                 events.append(f"NOTE_ON_{pitch}")
                 events.append(f"DUR_{dur}")
 
-        out_evt = rel_out_path(midi_path, root, OUT_EVENT_ROOT, ".txt")
+        out_evt = make_out_path(midi_path,root,OUT_EVENT_ROOT,".txt")
+
         with open(out_evt, "w", encoding="utf-8") as f:
             for e in events:
                 f.write(e + "\n")
 
 print("==== DONE ====")
-print("Total processed:", total)
-print("Bad skipped   :", bad)
+print("Total processed:", total_files)
+print("Bad skipped   :", bad_files)

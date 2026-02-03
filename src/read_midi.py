@@ -3,7 +3,7 @@ import bisect
 import collections
 
 # ===================== PATHS =====================
-INPUT_MIDI  = "data/test_midis/15. Hartmann's Youkai Girl (sagittarius shikoku).mid"
+INPUT_MIDI  = "data/test_midis/1. A Shadow In The Blue Sky (terebi).mid"
 OUTPUT_MIDI = "data/quantized/15_hartmann_quantized_1_32.mid"
 OUTPUT_DUR  = "data/quantized/15_hartmann_dur.txt"
 OUTPUT_EVT  = "data/quantized/15_hartmann_events.txt"
@@ -20,7 +20,10 @@ print("Time signature changes:")
 for ts in midi.time_signature_changes:
     print(f"  {ts.numerator}/{ts.denominator} at {ts.time:.3f}s")
 print("Instruments:", len(midi.instruments))
+print("\n===== PROGRAM USAGE =====")
 
+program_counter = collections.Counter()
+program_detail  = []
 # ===================== UTIL ======================
 def time_to_beat(t, bt):
     if t <= bt[0]: return 0.0
@@ -41,17 +44,8 @@ def quantize_duration_beat(dur, grid):
 
 def map_instrument(inst):
     if inst.is_drum:
-        return "INST_DRUM"
-    p = inst.program
-    if p < 8:
-        return "INST_PIANO"
-    if 32 <= p < 40:
-        return "INST_BASS"
-    if 40 <= p < 56:
-        return "INST_STRINGS"
-    if 72 <= p < 80:
-        return "INST_WIND"
-    return "INST_OTHER"
+        return f"INST_DRUM"
+    return f"INST_PROG_{inst.program}"
 
 
 
@@ -101,8 +95,19 @@ ts_events.sort(key=lambda x: x[0])
 
 # collect notes
 notes = []
-for inst in midi.instruments:
+for idx, inst in enumerate(midi.instruments):
     inst_evt = map_instrument(inst)
+
+    program_counter[inst.program] += 1
+
+    program_detail.append({
+        "track": idx,
+        "program": inst.program,
+        "is_drum": inst.is_drum,
+        "mapped": inst_evt,
+        "notes": len(inst.notes)
+    })
+
     for note in inst.notes:
         notes.append((
             note._start_beat_q,
@@ -110,6 +115,7 @@ for inst in midi.instruments:
             note.pitch,
             note._dur_beat
         ))
+
 notes.sort(key=lambda x: x[0])
 
 events = []
@@ -131,3 +137,16 @@ with open(OUTPUT_EVT, "w", encoding="utf-8") as f:
 
 print("Event doc:", OUTPUT_EVT)
 print("Total events:", len(events))
+print("\n===== PROGRAM SUMMARY =====")
+for p, c in program_counter.most_common():
+    print(f"Program {p:3d}  tracks: {c}")
+
+print("\n===== PROGRAM DETAIL (per track) =====")
+for d in program_detail:
+    print(
+        f"Track {d['track']:2d} | "
+        f"Program {d['program']:3d} | "
+        f"is_drum={d['is_drum']:<5} | "
+        f"{d['mapped']:<12} | "
+        f"notes={d['notes']}"
+    )

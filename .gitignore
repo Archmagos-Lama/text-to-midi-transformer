@@ -24,3 +24,5 @@ Thumbs.db
 
 data/clean_midi/
 data/touhou_midi_collection/
+data/events/
+data/quantized_midi/

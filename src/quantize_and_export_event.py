@@ -13,7 +13,7 @@ warnings.filterwarnings(
 # ===================== CONFIG =====================
 
 INPUT_ROOTS = [
-    "data/touhou_midi_collection"
+    "data/clean_midi",
 ]
 
 OUT_MIDI_ROOT  = "data/quantized_midi"

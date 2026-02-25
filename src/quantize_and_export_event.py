@@ -3,6 +3,7 @@ import bisect
 import pretty_midi
 import warnings
 from itertools import groupby
+from tqdm import tqdm
 
 warnings.filterwarnings(
     "ignore",
@@ -13,7 +14,7 @@ warnings.filterwarnings(
 # ===================== CONFIG =====================
 
 INPUT_ROOTS = [
-    "data/clean_midi",
+    "data/touhou_midi_collection",
 ]
 
 OUT_MIDI_ROOT  = "data/quantized_midi"
@@ -177,125 +178,175 @@ def rel_out_path(in_path, in_root, out_root, ext):
 total_files = 0
 bad_files   = 0
 
+all_midis = []
 for root in INPUT_ROOTS:
-    for midi_path in iter_midi_files(root):
-        total_files += 1
-        if total_files % 50 == 0:
-            print(f"[quantize] processed {total_files}, bad {bad_files}")
+    all_midis.extend(iter_midi_files(root))
 
-            
-        try:
-            midi = pretty_midi.PrettyMIDI(midi_path)
-        except Exception:
-            bad_files += 1
-            continue
+pbar = tqdm(all_midis, desc="Quantizing MIDI")
 
-        beat_times = midi.get_beats()
-        if len(beat_times) < 2:
-            bad += 1
-            continue
+for midi_path in pbar:
+    try:
+        midi = pretty_midi.PrettyMIDI(midi_path)
+    except Exception:
+        bad_files += 1
+        pbar.set_postfix(bad=bad_files)
+        continue
 
-        # ---------- quantize notes ----------
-        for inst in midi.instruments:
-            for note in inst.notes:
-                sb = time_to_beat(note.start, beat_times)
-                eb = time_to_beat(note.end,   beat_times)
+    beat_times = midi.get_beats()
+    if len(beat_times) < 2:
+        bad_files += 1
+        pbar.set_postfix(bad=bad_files)
+        continue
 
-                start_q = round(sb / GRID_BEAT) * GRID_BEAT
-                dur_q   = quantize_duration_beat(eb - sb, GRID_BEAT)
-                dur_q   = bucket_duration(dur_q)
+    # ---------- quantize notes ---------- #
+    for inst in midi.instruments:
+        for note in inst.notes:
+            sb = time_to_beat(note.start, beat_times)
+            eb = time_to_beat(note.end,   beat_times)
 
-                end_q = start_q + dur_q
+            start_q = round(sb / GRID_BEAT) * GRID_BEAT
+            dur_q   = quantize_duration_beat(eb - sb, GRID_BEAT)
+            dur_q   = bucket_duration(dur_q)
 
-                note.start = beat_to_time(start_q, beat_times)
-                note.end   = beat_to_time(end_q,   beat_times)
+            end_q = start_q + dur_q
 
-                note._start_beat = start_q
-                note._dur_beat   = dur_q
+            note.start = beat_to_time(start_q, beat_times)
+            note.end   = beat_to_time(end_q,   beat_times)
 
-        # ---------- export quantized MIDI (INST-based, clean) ----------
+            note._start_beat = start_q
+            note._dur_beat   = dur_q
 
-        qm = pretty_midi.PrettyMIDI()
-        qm.time_signature_changes = midi.time_signature_changes
+    # ---------- export quantized MIDI (INST-based, clean) ----------
 
-        inst_tracks = {}
+    qm = pretty_midi.PrettyMIDI()
+    qm.time_signature_changes = midi.time_signature_changes
 
-        def get_track(inst_evt):
-            if inst_evt not in inst_tracks:
-                is_drum = (inst_evt == "INST_DRUM")
-                program = DEFAULT_PROGRAM_FOR_INST.get(inst_evt, 0)
+    inst_tracks = {}
 
-                inst_tracks[inst_evt] = pretty_midi.Instrument(
-                    program=program,
-                    is_drum=is_drum,
-                    name=inst_evt
+    def get_track(inst_evt):
+        if inst_evt not in inst_tracks:
+            is_drum = (inst_evt == "INST_DRUM")
+            program = DEFAULT_PROGRAM_FOR_INST.get(inst_evt, 0)
+
+            inst_tracks[inst_evt] = pretty_midi.Instrument(
+                program=program,
+                is_drum=is_drum,
+                name=inst_evt
+            )
+            qm.instruments.append(inst_tracks[inst_evt])
+        return inst_tracks[inst_evt]
+
+    # 收集所有量化后的 note，按 INST 写回
+    for inst in midi.instruments:
+        inst_evt = map_instrument(inst)
+        tr = get_track(inst_evt)
+
+        for note in inst.notes:
+            tr.notes.append(
+                pretty_midi.Note(
+                    velocity=note.velocity,
+                    pitch=note.pitch,
+                    start=note.start,
+                    end=note.end
                 )
-                qm.instruments.append(inst_tracks[inst_evt])
-            return inst_tracks[inst_evt]
+            )
 
-        # 收集所有量化后的 note，按 INST 写回
-        for inst in midi.instruments:
-            inst_evt = map_instrument(inst)
-            tr = get_track(inst_evt)
-
-            for note in inst.notes:
-                tr.notes.append(
-                    pretty_midi.Note(
-                        velocity=note.velocity,
-                        pitch=note.pitch,
-                        start=note.start,
-                        end=note.end
-                    )
-                )
-
-        out_midi = make_out_path(midi_path, root, OUT_MIDI_ROOT, ".mid")
-        qm.write(out_midi)
+    out_midi = make_out_path(midi_path, root, OUT_MIDI_ROOT, ".mid")
+    qm.write(out_midi)
 
 
 
-        # ---------- export events ----------
-        events = []
+    # ---------- export events ----------
+    events = []
 
-        # time sig events
-        for ts in midi.time_signature_changes:
-            norm = normalize_time_sig(ts.numerator, ts.denominator)
+            # ===== BAR state =====
+    last_bar_beat = None
+    cur_bar_len   = None
+    ts_idx        = 0
+
+    time_sigs = sorted(
+        midi.time_signature_changes,
+        key=lambda ts: ts.time
+    )
+
+    # default time sig
+    if time_sigs:
+        cur_ts = time_sigs[0]
+    else:
+        cur_ts = pretty_midi.TimeSignature(4, 4, 0.0)
+
+    def bar_len(ts):
+        return ts.numerator * (4.0 / ts.denominator)
+
+    cur_bar_len = bar_len(cur_ts)
+
+
+    # time sig events
+    for ts in midi.time_signature_changes:
+        norm = normalize_time_sig(ts.numerator, ts.denominator)
+        if norm is not None:
+            events.append(f"TIME_SIG_{norm.replace('/', '_')}")
+    
+    # default time sig
+    if not any(e.startswith("TIME_SIG_") for e in events):
+        events.append("TIME_SIG_4_4")
+
+    notes = []
+    for inst in midi.instruments:
+        inst_evt = map_instrument(inst)
+        for note in inst.notes:
+            notes.append((
+                note._start_beat,
+                inst_evt,
+                note.pitch,
+                note._dur_beat
+            ))
+
+    notes.sort(key=lambda x: x[0])
+
+    cur_inst = None
+
+    for start_beat, group in groupby(notes, key=lambda x: x[0]):
+
+        # ===== handle TIME_SIG change =====
+        while (
+            ts_idx + 1 < len(time_sigs) and
+            beat_to_time(start_beat, beat_times) >= time_sigs[ts_idx + 1].time
+        ):
+            ts_idx += 1
+            cur_ts = time_sigs[ts_idx]
+            cur_bar_len = bar_len(cur_ts)
+            last_bar_beat = None
+
+            norm = normalize_time_sig(cur_ts.numerator, cur_ts.denominator)
             if norm is not None:
                 events.append(f"TIME_SIG_{norm.replace('/', '_')}")
-        
-        # default time sig
-        if not any(e.startswith("TIME_SIG_") for e in events):
-            events.append("TIME_SIG_4_4")
 
-        notes = []
-        for inst in midi.instruments:
-            inst_evt = map_instrument(inst)
-            for note in inst.notes:
-                notes.append((
-                    note._start_beat,
-                    inst_evt,
-                    note.pitch,
-                    note._dur_beat
-                ))
+        # ===== insert BAR =====
+        if last_bar_beat is None:
+            events.append("BAR")
+            last_bar_beat = (start_beat // cur_bar_len) * cur_bar_len
 
-        notes.sort(key=lambda x: x[0])
+        while start_beat - last_bar_beat >= cur_bar_len - 1e-6:
+            last_bar_beat += cur_bar_len
+            events.append("BAR")
 
-        cur_inst = None
+        # ===== original logic =====
+        group = sorted(group, key=lambda x: x[1])
 
-        for start_beat, group in groupby(notes, key=lambda x: x[0]):
-            group = sorted(group, key=lambda x: x[1])
+        for _, inst_evt, pitch, dur in group:
+            if inst_evt != cur_inst:
+                events.append(inst_evt)
+                cur_inst = inst_evt
+            events.append(f"NOTE_ON_{pitch}")
+            events.append(f"DUR_{dur}")
 
-            for _, inst_evt, pitch, dur in group:
-                if inst_evt != cur_inst:
-                    events.append(inst_evt)
-                    cur_inst = inst_evt
-                events.append(f"NOTE_ON_{pitch}")
-                events.append(f"DUR_{dur}")
 
-        out_evt = make_out_path(midi_path,root,OUT_EVENT_ROOT,".txt")
+    out_evt = make_out_path(midi_path,root,OUT_EVENT_ROOT,".txt")
 
-        with open(out_evt, "w", encoding="utf-8") as f:
-            for e in events:
-                f.write(e + "\n")
+    with open(out_evt, "w", encoding="utf-8") as f:
+        for e in events:
+            f.write(e + "\n")
 
 print("==== DONE ====")
 print("Total processed:", total_files)

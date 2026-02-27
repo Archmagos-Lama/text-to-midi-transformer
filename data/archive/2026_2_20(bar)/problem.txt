@@ -1,0 +1,37 @@
+Current Issues Summary 
+1. Structural Instability
+
+<START> and <END> appear in the middle of sequences
+
+TIME_SIG changes randomly
+
+NOTE_ON tokens often appear without corresponding DUR
+
+2. Weak Musical Grammar
+
+No explicit bar or position structure
+
+No enforced NOTE_ON → DUR constraint
+
+No transition control between token types
+
+3. Representation Limitation
+
+Linear token format (INST → NOTE → DUR) lacks temporal hierarchy
+
+No bar-level organization
+
+No position-level timing resolution
+
+4. Generation Collapse
+
+Instrument dominance over time (e.g., piano takes over)
+
+Repetitive pitch and duration patterns
+
+Loss of multi-track balance
+
+Root Cause
+
+The model is trained as a pure next-token language model,
+but the token representation does not encode sufficient musical structure.

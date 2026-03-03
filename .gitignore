@@ -21,14 +21,15 @@ Thumbs.db
 # ===== 日志 =====
 *.log
 
-
+data/miditok_out/
 data/clean_midi/
 data/touhou_midi_collection/
 data/events/
 data/quantized_midi/
 data/tokens/
 data/midi/
-data/remi_json/
+remi_json/
+midi_chunks/
 
 *.pt
 *.zip

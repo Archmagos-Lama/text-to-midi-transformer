@@ -30,6 +30,6 @@ data/tokens/
 data/midi/
 remi_json/
 midi_chunks/
-
+touhou_augmented/
 *.pt
 *.zip

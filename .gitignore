@@ -33,3 +33,6 @@ midi_chunks/
 touhou_augmented/
 *.pt
 *.zip
+touhou_augmented_train/
+touhou_augmented_val/
+test_midis/

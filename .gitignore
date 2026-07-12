@@ -36,3 +36,6 @@ touhou_augmented/
 touhou_augmented_train/
 touhou_augmented_val/
 test_midis/
+*.docx
+*.tmp
+generated_midis/

@@ -1,0 +1,686 @@
+{
+  "generated": [
+    {
+      "pitch_class_entropy": 3.1251870203092804,
+      "pitch_range": 58,
+      "note_density": 21.64864864864865,
+      "average_pitch": 54.215980024968786,
+      "pitch_std": 14.205625455303966,
+      "average_duration": 0.5181023720349563,
+      "rhythmic_entropy": 0.5497074810722462,
+      "polyphony": 9.597378277153558
+    },
+    {
+      "pitch_class_entropy": 2.49898065735664,
+      "pitch_range": 36,
+      "note_density": 8.988095238095237,
+      "average_pitch": 54.54304635761589,
+      "pitch_std": 9.618645730381834,
+      "average_duration": 0.7413907284768212,
+      "rhythmic_entropy": 0.9463809171549198,
+      "polyphony": 5.013907284768212
+    },
+    {
+      "pitch_class_entropy": 3.180018720267119,
+      "pitch_range": 56,
+      "note_density": 3.1008991008991007,
+      "average_pitch": 67.22422680412372,
+      "pitch_std": 10.075423332545546,
+      "average_duration": 0.9871134020618557,
+      "rhythmic_entropy": 0.8511587156145927,
+      "polyphony": 3.597938144329897
+    },
+    {
+      "pitch_class_entropy": 3.215210357619589,
+      "pitch_range": 62,
+      "note_density": 7.248979591836735,
+      "average_pitch": 52.461711711711715,
+      "pitch_std": 14.005496757073107,
+      "average_duration": 0.5917792792792793,
+      "rhythmic_entropy": 0.217356786275026,
+      "polyphony": 4.1441441441441444
+    },
+    {
+      "pitch_class_entropy": 2.894927320151229,
+      "pitch_range": 50,
+      "note_density": 9.91304347826087,
+      "average_pitch": 48.28849902534113,
+      "pitch_std": 12.999872704748599,
+      "average_duration": 1.0504385964912282,
+      "rhythmic_entropy": 0.13444311937756565,
+      "polyphony": 7.158869395711501
+    },
+    {
+      "pitch_class_entropy": 2.7271262565427237,
+      "pitch_range": 48,
+      "note_density": 5.346153846153846,
+      "average_pitch": 63.64748201438849,
+      "pitch_std": 8.779477513907057,
+      "average_duration": 1.4271582733812949,
+      "rhythmic_entropy": 0.2572361459333545,
+      "polyphony": 7.785714285714286
+    },
+    {
+      "pitch_class_entropy": 3.224788664528888,
+      "pitch_range": 67,
+      "note_density": 10.885906040268456,
+      "average_pitch": 53.60789149198521,
+      "pitch_std": 13.831347618189815,
+      "average_duration": 0.500308261405672,
+      "rhythmic_entropy": 0.986867576622996,
+      "polyphony": 3.7712700369913685
+    },
+    {
+      "pitch_class_entropy": 3.0070388636600525,
+      "pitch_range": 70,
+      "note_density": 6.380566801619433,
+      "average_pitch": 61.99873096446701,
+      "pitch_std": 11.275788194391435,
+      "average_duration": 1.2111357868020305,
+      "rhythmic_entropy": 1.2890299040249182,
+      "polyphony": 5.676395939086294
+    },
+    {
+      "pitch_class_entropy": 3.1435067956670513,
+      "pitch_range": 50,
+      "note_density": 3.7606837606837606,
+      "average_pitch": 57.80681818181818,
+      "pitch_std": 12.714038370801578,
+      "average_duration": 1.197159090909091,
+      "rhythmic_entropy": 0.920021615848563,
+      "polyphony": 3.3772727272727274
+    },
+    {
+      "pitch_class_entropy": 3.072642532267894,
+      "pitch_range": 56,
+      "note_density": 7.175257731958763,
+      "average_pitch": 57.34099616858238,
+      "pitch_std": 12.59791555783274,
+      "average_duration": 0.7171934865900383,
+      "rhythmic_entropy": 1.2329081783683435,
+      "polyphony": 3.7490421455938696
+    },
+    {
+      "pitch_class_entropy": 3.0000400632375968,
+      "pitch_range": 51,
+      "note_density": 14.40677966101695,
+      "average_pitch": 64.85764705882353,
+      "pitch_std": 12.80136827678141,
+      "average_duration": 0.41352941176470587,
+      "rhythmic_entropy": 1.0777407410070559,
+      "polyphony": 4.145882352941176
+    },
+    {
+      "pitch_class_entropy": 3.0199419026508276,
+      "pitch_range": 52,
+      "note_density": 5.9520547945205475,
+      "average_pitch": 61.85155350978136,
+      "pitch_std": 11.40679195259993,
+      "average_duration": 0.9208860759493671,
+      "rhythmic_entropy": 0.018312689160161995,
+      "polyphony": 4.142117376294592
+    },
+    {
+      "pitch_class_entropy": 2.9461387904055734,
+      "pitch_range": 57,
+      "note_density": 17.174311926605505,
+      "average_pitch": 53.84188034188034,
+      "pitch_std": 15.270842966168006,
+      "average_duration": 0.4910968660968661,
+      "rhythmic_entropy": 1.0126947996456481,
+      "polyphony": 7.146723646723647
+    },
+    {
+      "pitch_class_entropy": 2.7046151241037832,
+      "pitch_range": 45,
+      "note_density": 4.811023622047244,
+      "average_pitch": 66.49099836333879,
+      "pitch_std": 10.006928899926322,
+      "average_duration": 0.4353518821603928,
+      "rhythmic_entropy": 0.0,
+      "polyphony": 1.4312602291325696
+    },
+    {
+      "pitch_class_entropy": 3.033162738804263,
+      "pitch_range": 51,
+      "note_density": 5.595628415300546,
+      "average_pitch": 69.556640625,
+      "pitch_std": 8.146408984307111,
+      "average_duration": 0.99951171875,
+      "rhythmic_entropy": 1.2684138715085558,
+      "polyphony": 4.267578125
+    },
+    {
+      "pitch_class_entropy": 3.160706132749492,
+      "pitch_range": 74,
+      "note_density": 47.44444444444444,
+      "average_pitch": 52.68852459016394,
+      "pitch_std": 18.008817367483925,
+      "average_duration": 0.3542154566744731,
+      "rhythmic_entropy": 0.1256580501725674,
+      "polyphony": 13.403981264637002
+    },
+    {
+      "pitch_class_entropy": 3.0127208698208996,
+      "pitch_range": 71,
+      "note_density": 5.453658536585366,
+      "average_pitch": 64.66368515205724,
+      "pitch_std": 17.83439887407531,
+      "average_duration": 0.9105545617173524,
+      "rhythmic_entropy": 1.0916209631869103,
+      "polyphony": 3.9114490161001787
+    },
+    {
+      "pitch_class_entropy": 2.953219467826256,
+      "pitch_range": 48,
+      "note_density": 6.625698324022347,
+      "average_pitch": 61.31703204047218,
+      "pitch_std": 12.174143804113003,
+      "average_duration": 0.8461214165261383,
+      "rhythmic_entropy": 0.05204608477482437,
+      "polyphony": 3.8524451939291735
+    }
+  ],
+  "reference": [
+    {
+      "pitch_class_entropy": 3.430873622689551,
+      "pitch_range": 83,
+      "note_density": 37.319010416666664,
+      "average_pitch": 52.97397159903702,
+      "pitch_std": 17.74050551262791,
+      "average_duration": 0.407964365048905,
+      "rhythmic_entropy": 0.7154235874841642,
+      "polyphony": 12.543055022504449
+    },
+    {
+      "pitch_class_entropy": 3.1746114692424485,
+      "pitch_range": 80,
+      "note_density": 16.5,
+      "average_pitch": 59.36722488038278,
+      "pitch_std": 19.36115648242606,
+      "average_duration": 0.6024072966507178,
+      "rhythmic_entropy": 0.9199086009381734,
+      "polyphony": 9.11164274322169
+    },
+    {
+      "pitch_class_entropy": 2.8969799101979445,
+      "pitch_range": 87,
+      "note_density": 25.085699400885648,
+      "average_pitch": 78.55939524838013,
+      "pitch_std": 11.190785467595285,
+      "average_duration": 0.35205183585313177,
+      "rhythmic_entropy": 0.0,
+      "polyphony": 7.776540953646785
+    },
+    {
+      "pitch_class_entropy": 3.1376239064845417,
+      "pitch_range": 100,
+      "note_density": 23.55060728744939,
+      "average_pitch": 51.16302790671022,
+      "pitch_std": 14.891795822173968,
+      "average_duration": 0.9580468168013294,
+      "rhythmic_entropy": 1.049840241307637,
+      "polyphony": 18.385106870666437
+    },
+    {
+      "pitch_class_entropy": 3.3938268729142282,
+      "pitch_range": 70,
+      "note_density": 10.72422756737192,
+      "average_pitch": 59.633726067746686,
+      "pitch_std": 15.355589219704761,
+      "average_duration": 0.7365565169366716,
+      "rhythmic_entropy": 1.2349231025239533,
+      "polyphony": 6.084830633284241
+    },
+    {
+      "pitch_class_entropy": 3.417367957663593,
+      "pitch_range": 52,
+      "note_density": 5.097108969607117,
+      "average_pitch": 59.07562536358348,
+      "pitch_std": 13.624614328194767,
+      "average_duration": 1.3801628853984875,
+      "rhythmic_entropy": 1.28515416927132,
+      "polyphony": 5.819953461314718
+    },
+    {
+      "pitch_class_entropy": 3.0348916245883624,
+      "pitch_range": 60,
+      "note_density": 11.14997104806022,
+      "average_pitch": 62.72663066057333,
+      "pitch_std": 14.340915967363804,
+      "average_duration": 0.9794284898213543,
+      "rhythmic_entropy": 0.9945432952150558,
+      "polyphony": 10.403614457831326
+    },
+    {
+      "pitch_class_entropy": 2.801998591118703,
+      "pitch_range": 60,
+      "note_density": 7.8,
+      "average_pitch": 54.5940170940171,
+      "pitch_std": 13.424596577352522,
+      "average_duration": 0.7904647435897436,
+      "rhythmic_entropy": 1.1548088630209303,
+      "polyphony": 4.950854700854701
+    },
+    {
+      "pitch_class_entropy": 2.842532995751514,
+      "pitch_range": 57,
+      "note_density": 11.272363595955106,
+      "average_pitch": 56.14353312302839,
+      "pitch_std": 13.101456711323442,
+      "average_duration": 0.631506309148265,
+      "rhythmic_entropy": 2.2082653364207268,
+      "polyphony": 5.895110410094637
+    },
+    {
+      "pitch_class_entropy": 3.2713012488335136,
+      "pitch_range": 82,
+      "note_density": 8.215977242128766,
+      "average_pitch": 58.465655471289274,
+      "pitch_std": 14.310367987499063,
+      "average_duration": 0.9633337847598413,
+      "rhythmic_entropy": 1.1700392925886451,
+      "polyphony": 6.778439869989166
+    },
+    {
+      "pitch_class_entropy": 3.0505821645564377,
+      "pitch_range": 55,
+      "note_density": 20.66,
+      "average_pitch": 55.328291384317524,
+      "pitch_std": 10.810422760274006,
+      "average_duration": 0.35651571071313326,
+      "rhythmic_entropy": 0.5900444894968592,
+      "polyphony": 4.614109390125847
+    },
+    {
+      "pitch_class_entropy": 2.8225228725179217,
+      "pitch_range": 62,
+      "note_density": 17.091302211302214,
+      "average_pitch": 71.57576593982887,
+      "pitch_std": 13.155757624200795,
+      "average_duration": 0.5007498389916276,
+      "rhythmic_entropy": 1.4210419803750467,
+      "polyphony": 7.024979298923544
+    },
+    {
+      "pitch_class_entropy": 2.7517457822555262,
+      "pitch_range": 52,
+      "note_density": 8.78829268292683,
+      "average_pitch": 63.37255772646537,
+      "pitch_std": 12.463310704090755,
+      "average_duration": 0.9603130550621669,
+      "rhythmic_entropy": 0.3202825839435913,
+      "polyphony": 7.035523978685613
+    },
+    {
+      "pitch_class_entropy": 2.871745476079217,
+      "pitch_range": 102,
+      "note_density": 10.609375,
+      "average_pitch": 66.4876919840101,
+      "pitch_std": 14.09226554671856,
+      "average_duration": 1.059856932463707,
+      "rhythmic_entropy": 0.940037212164456,
+      "polyphony": 8.883757626762044
+    },
+    {
+      "pitch_class_entropy": 3.3716461829991142,
+      "pitch_range": 56,
+      "note_density": 13.726998228691526,
+      "average_pitch": 65.97079589216945,
+      "pitch_std": 10.257974486867809,
+      "average_duration": 0.7161070549850236,
+      "rhythmic_entropy": 1.7025967069794685,
+      "polyphony": 7.425706033376123
+    },
+    {
+      "pitch_class_entropy": 2.8771841860495035,
+      "pitch_range": 92,
+      "note_density": 24.10033767486734,
+      "average_pitch": 78.15724579663731,
+      "pitch_std": 9.078852019039589,
+      "average_duration": 0.3516613290632506,
+      "rhythmic_entropy": 0.0060727414368200545,
+      "polyphony": 7.366613290632506
+    },
+    {
+      "pitch_class_entropy": 2.616741890908651,
+      "pitch_range": 70,
+      "note_density": 4.72972972972973,
+      "average_pitch": 60.68952380952381,
+      "pitch_std": 14.733078583077857,
+      "average_duration": 1.0928571428571427,
+      "rhythmic_entropy": 1.2807166744653444,
+      "polyphony": 3.803809523809524
+    },
+    {
+      "pitch_class_entropy": 3.164879327110917,
+      "pitch_range": 63,
+      "note_density": 3.543269230769231,
+      "average_pitch": 62.16146540027137,
+      "pitch_std": 14.774091959890628,
+      "average_duration": 1.969206995326398,
+      "rhythmic_entropy": 1.2564316764339276,
+      "polyphony": 5.817955676164631
+    },
+    {
+      "pitch_class_entropy": 3.471057210998252,
+      "pitch_range": 67,
+      "note_density": 11.5625,
+      "average_pitch": 62.23986486486486,
+      "pitch_std": 14.625709684166518,
+      "average_duration": 0.7867257882882882,
+      "rhythmic_entropy": 0.7058851651110863,
+      "polyphony": 7.546790540540541
+    },
+    {
+      "pitch_class_entropy": 3.451308735296302,
+      "pitch_range": 54,
+      "note_density": 2.3590178650698914,
+      "average_pitch": 57.776395022079484,
+      "pitch_std": 13.001134064534128,
+      "average_duration": 1.8809756791114678,
+      "rhythmic_entropy": 1.0222642731762046,
+      "polyphony": 3.47631473303894
+    },
+    {
+      "pitch_class_entropy": 2.7727089618735783,
+      "pitch_range": 55,
+      "note_density": 14.5,
+      "average_pitch": 69.7610405323654,
+      "pitch_std": 13.092037983691279,
+      "average_duration": 0.9248790078644888,
+      "rhythmic_entropy": 0.47512074041685076,
+      "polyphony": 10.58832425892317
+    },
+    {
+      "pitch_class_entropy": 3.511724613642257,
+      "pitch_range": 81,
+      "note_density": 30.34722222222222,
+      "average_pitch": 69.0578947368421,
+      "pitch_std": 14.715030319608502,
+      "average_duration": 0.6311117467581998,
+      "rhythmic_entropy": 0.8734919760500408,
+      "polyphony": 14.68112128146453
+    },
+    {
+      "pitch_class_entropy": 2.3577127400135405,
+      "pitch_range": 62,
+      "note_density": 11.870345359830214,
+      "average_pitch": 80.5941096157597,
+      "pitch_std": 11.009192943122718,
+      "average_duration": 0.5487777127624992,
+      "rhythmic_entropy": 0.7779678600341821,
+      "polyphony": 5.1376048371367276
+    },
+    {
+      "pitch_class_entropy": 3.4253380008663195,
+      "pitch_range": 59,
+      "note_density": 9.486913555645128,
+      "average_pitch": 63.25343721356553,
+      "pitch_std": 13.261469262956023,
+      "average_duration": 1.0477338260006113,
+      "rhythmic_entropy": 3.0297742914396193,
+      "polyphony": 10.892300641613199
+    },
+    {
+      "pitch_class_entropy": 3.277860213414428,
+      "pitch_range": 80,
+      "note_density": 13.715646762736071,
+      "average_pitch": 61.0779291257394,
+      "pitch_std": 16.397693727133184,
+      "average_duration": 0.8316848238997123,
+      "rhythmic_entropy": 1.4150179803253635,
+      "polyphony": 9.433738535844142
+    },
+    {
+      "pitch_class_entropy": 2.7745638711404874,
+      "pitch_range": 53,
+      "note_density": 11.349480968858131,
+      "average_pitch": 62.057435090479935,
+      "pitch_std": 11.675989176094644,
+      "average_duration": 0.5602494754786258,
+      "rhythmic_entropy": 1.6118637272837957,
+      "polyphony": 5.28324154209284
+    },
+    {
+      "pitch_class_entropy": 3.4950893441616113,
+      "pitch_range": 85,
+      "note_density": 4.410691003911343,
+      "average_pitch": 60.23233816139521,
+      "pitch_std": 17.486292779700324,
+      "average_duration": 1.2945610404966006,
+      "rhythmic_entropy": 1.5682657206767494,
+      "polyphony": 3.813035767070647
+    },
+    {
+      "pitch_class_entropy": 3.114186431886505,
+      "pitch_range": 67,
+      "note_density": 21.093892433910668,
+      "average_pitch": 58.97160143227559,
+      "pitch_std": 14.365364003898138,
+      "average_duration": 0.685053710334609,
+      "rhythmic_entropy": 0.6143610216153975,
+      "polyphony": 11.09303617730584
+    },
+    {
+      "pitch_class_entropy": 3.3791756790203014,
+      "pitch_range": 69,
+      "note_density": 10.21975806451613,
+      "average_pitch": 72.64095482343657,
+      "pitch_std": 11.002990480879408,
+      "average_duration": 0.5416214572236471,
+      "rhythmic_entropy": 0.2880847545294308,
+      "polyphony": 4.257545867034918
+    },
+    {
+      "pitch_class_entropy": 3.433856968382582,
+      "pitch_range": 60,
+      "note_density": 3.593538301198541,
+      "average_pitch": 65.03422273781902,
+      "pitch_std": 12.671949146107112,
+      "average_duration": 2.22215777262181,
+      "rhythmic_entropy": 2.0228387977482547,
+      "polyphony": 6.582656612529003
+    },
+    {
+      "pitch_class_entropy": 1.9900124892137199,
+      "pitch_range": 43,
+      "note_density": 23.878172588832484,
+      "average_pitch": 64.46428571428571,
+      "pitch_std": 8.02252886487516,
+      "average_duration": 0.1632653061224489,
+      "rhythmic_entropy": 0.0,
+      "polyphony": 3.4081632653061225
+    },
+    {
+      "pitch_class_entropy": 2.832936113103511,
+      "pitch_range": 55,
+      "note_density": 10.192708333333334,
+      "average_pitch": 52.04011241696474,
+      "pitch_std": 13.796246169430878,
+      "average_duration": 0.9075114971895759,
+      "rhythmic_entropy": 1.0869000896389658,
+      "polyphony": 7.07230454777721
+    },
+    {
+      "pitch_class_entropy": 3.4937498091589836,
+      "pitch_range": 67,
+      "note_density": 28.514544279250163,
+      "average_pitch": 62.74727965179543,
+      "pitch_std": 14.821916727835905,
+      "average_duration": 0.27373503808487487,
+      "rhythmic_entropy": 1.208923664386243,
+      "polyphony": 5.4036089952847295
+    },
+    {
+      "pitch_class_entropy": 2.9657089418138063,
+      "pitch_range": 52,
+      "note_density": 5.22279792746114,
+      "average_pitch": 66.76785714285714,
+      "pitch_std": 12.020471896498593,
+      "average_duration": 1.5947420634920635,
+      "rhythmic_entropy": 0.9811093640437493,
+      "polyphony": 7.246031746031746
+    },
+    {
+      "pitch_class_entropy": 2.9264737781078836,
+      "pitch_range": 71,
+      "note_density": 7.947630922693267,
+      "average_pitch": 65.79761531220583,
+      "pitch_std": 17.24702365264572,
+      "average_duration": 1.0222780043928459,
+      "rhythmic_entropy": 1.638059143669528,
+      "polyphony": 6.36915594603075
+    },
+    {
+      "pitch_class_entropy": 2.853519755431395,
+      "pitch_range": 63,
+      "note_density": 5.535438862919109,
+      "average_pitch": 63.21399176954733,
+      "pitch_std": 16.06423223552264,
+      "average_duration": 0.9430812757201646,
+      "rhythmic_entropy": 0.5619975976091723,
+      "polyphony": 3.8563786008230454
+    },
+    {
+      "pitch_class_entropy": 2.0354625204768135,
+      "pitch_range": 44,
+      "note_density": 3.431472081218274,
+      "average_pitch": 75.73372781065089,
+      "pitch_std": 11.83591409375671,
+      "average_duration": 2.6568047337278107,
+      "rhythmic_entropy": 0.3143539811312203,
+      "polyphony": 8.275147928994082
+    },
+    {
+      "pitch_class_entropy": 3.1644509259381697,
+      "pitch_range": 65,
+      "note_density": 12.728089887640449,
+      "average_pitch": 70.1670197740113,
+      "pitch_std": 16.9093211312061,
+      "average_duration": 0.7984639830508474,
+      "rhythmic_entropy": 1.1651341395956754,
+      "polyphony": 7.643008474576271
+    },
+    {
+      "pitch_class_entropy": 3.0270395515751742,
+      "pitch_range": 60,
+      "note_density": 16.854914541733503,
+      "average_pitch": 63.57561039642951,
+      "pitch_std": 12.448871272467807,
+      "average_duration": 0.788192438960357,
+      "rhythmic_entropy": 1.2093035102096898,
+      "polyphony": 9.715804673142557
+    },
+    {
+      "pitch_class_entropy": 3.2063305062925376,
+      "pitch_range": 35,
+      "note_density": 7.755271459405611,
+      "average_pitch": 67.47013487475915,
+      "pitch_std": 6.707479182887836,
+      "average_duration": 0.5904517233997002,
+      "rhythmic_entropy": 2.208033932206358,
+      "polyphony": 4.877649325626204
+    },
+    {
+      "pitch_class_entropy": 3.44889875874265,
+      "pitch_range": 90,
+      "note_density": 6.797066014669927,
+      "average_pitch": 58.48992805755395,
+      "pitch_std": 15.4240156336865,
+      "average_duration": 0.7509892086330935,
+      "rhythmic_entropy": 2.4948567244248365,
+      "polyphony": 4.785611510791367
+    },
+    {
+      "pitch_class_entropy": 3.5133779767756934,
+      "pitch_range": 73,
+      "note_density": 13.70774647887324,
+      "average_pitch": 72.43231441048034,
+      "pitch_std": 13.918614262073985,
+      "average_duration": 0.9983431800667866,
+      "rhythmic_entropy": 0.9977227362817576,
+      "polyphony": 12.215129720010275
+    },
+    {
+      "pitch_class_entropy": 2.8076045249452783,
+      "pitch_range": 45,
+      "note_density": 6.109375,
+      "average_pitch": 59.289002557544755,
+      "pitch_std": 11.378815067415493,
+      "average_duration": 1.3162830349531116,
+      "rhythmic_entropy": 0.0,
+      "polyphony": 6.428388746803069
+    },
+    {
+      "pitch_class_entropy": 3.484074486726952,
+      "pitch_range": 40,
+      "note_density": 6.114572864321608,
+      "average_pitch": 64.98159105851414,
+      "pitch_std": 9.748429450864053,
+      "average_duration": 0.6828840674994522,
+      "rhythmic_entropy": 0.396458133673725,
+      "polyphony": 3.133136094674556
+    },
+    {
+      "pitch_class_entropy": 2.215829120035542,
+      "pitch_range": 31,
+      "note_density": 7.041666666666667,
+      "average_pitch": 66.91814595660749,
+      "pitch_std": 4.863035929953039,
+      "average_duration": 0.8229783037475346,
+      "rhythmic_entropy": 0.0,
+      "polyphony": 4.254437869822485
+    },
+    {
+      "pitch_class_entropy": 2.970687231767057,
+      "pitch_range": 65,
+      "note_density": 16.229166666666668,
+      "average_pitch": 58.3183568677792,
+      "pitch_std": 14.229537440417312,
+      "average_duration": 1.2083868207103123,
+      "rhythmic_entropy": 0.9993645804409449,
+      "polyphony": 16.12387676508344
+    },
+    {
+      "pitch_class_entropy": 3.0638954419700526,
+      "pitch_range": 45,
+      "note_density": 6.436730123180291,
+      "average_pitch": 64.51826722338204,
+      "pitch_std": 12.925964722685071,
+      "average_duration": 0.7748782185107864,
+      "rhythmic_entropy": 1.596964599326069,
+      "polyphony": 3.6022964509394573
+    },
+    {
+      "pitch_class_entropy": 3.3824969732775165,
+      "pitch_range": 48,
+      "note_density": 7.866021585411239,
+      "average_pitch": 71.41408024224073,
+      "pitch_std": 10.894320590382705,
+      "average_duration": 0.8035579106737321,
+      "rhythmic_entropy": 0.9336161934840225,
+      "polyphony": 4.703633610900833
+    },
+    {
+      "pitch_class_entropy": 3.4470157728462114,
+      "pitch_range": 56,
+      "note_density": 10.361600948390834,
+      "average_pitch": 63.54018971542686,
+      "pitch_std": 14.475891344529572,
+      "average_duration": 0.7169922200033283,
+      "rhythmic_entropy": 1.338184600004879,
+      "polyphony": 5.26809785322017
+    },
+    {
+      "pitch_class_entropy": 3.4931922587787336,
+      "pitch_range": 64,
+      "note_density": 4.578125,
+      "average_pitch": 62.4770572620402,
+      "pitch_std": 14.64261216446698,
+      "average_duration": 1.427901023890785,
+      "rhythmic_entropy": 2.0687864891182834,
+      "polyphony": 4.947098976109215
+    }
+  ]
+}

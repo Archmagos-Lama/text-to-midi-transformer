@@ -1,3 +1,4 @@
+import json
 import math
 import time
 from pathlib import Path
@@ -6,12 +7,15 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-TRAIN_PATH = Path("dataset_remi/train_tokens.pt")
-VAL_PATH   = Path("dataset_remi/val_tokens.pt")
-OUT_DIR    = Path("runs_touhou_scratch")
+TRAIN_PATH     = Path("dataset_remi/train_tokens.pt")
+VAL_PATH       = Path("dataset_remi/val_tokens.pt")
+META_JSON = Path("dataset_remi/meta.json")
+OUT_DIR   = Path("runs_touhou_scratch")
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-vocab_size   = 613
+with open(META_JSON) as f:
+    _meta = json.load(f)
+vocab_size = _meta["vocab_size"]
 
 block_size   = 1536
 batch_size   = 12

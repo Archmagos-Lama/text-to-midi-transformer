@@ -39,3 +39,11 @@ test_midis/
 *.docx
 *.tmp
 generated_midis/
+generated_midis_baseline/
+generated_midis_extended/
+dataset_remi_baseline/
+paper_unpacked/
+eval_results/
+*.log
+gen_barpos_log.txt
+gen_baseline_log.txt

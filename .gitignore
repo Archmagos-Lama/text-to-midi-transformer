@@ -47,3 +47,14 @@ eval_results/
 *.log
 gen_barpos_log.txt
 gen_baseline_log.txt
+
+# Local experiment data and temporary authoring files
+dataset_remi_harmrole/
+dataset_remi_harmrole_v2/
+generated_midis_harmrole/
+generated_midis_harmrole_v2/
+generated_midis_extended_prompt/
+harmrole_tokenize_log.txt
+runs_touhou*/
+tmp/
+output/

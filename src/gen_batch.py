@@ -1,24 +1,35 @@
 """
 Batch MIDI generation script. Usage:
-  python src/gen_batch.py barpos 10 20   # seeds 10..19 -> generated_midis/
-  python src/gen_batch.py baseline 9 20  # seeds 9..19  -> generated_midis_baseline/
+  python src/gen_batch.py barpos 10 20    # seeds 10..19 -> generated_midis/
+  python src/gen_batch.py baseline 9 20   # seeds 9..19  -> generated_midis_baseline/
+  python src/gen_batch.py harmrole 0 50   # seeds 0..49  -> generated_midis_harmrole/
 """
 import sys, json
 from pathlib import Path
 import torch
 import torch.nn.functional as F
 
-mode    = sys.argv[1]          # "barpos" or "baseline"
+mode    = sys.argv[1]          # "barpos", "baseline", or "harmrole"
 seed_lo = int(sys.argv[2])
 seed_hi = int(sys.argv[3])
 
 if mode == "barpos":
-    DATA_DIR  = Path("dataset_remi")
+    DATA_DIR   = Path("dataset_remi")
     MODEL_PATH = "runs_touhou_scratch/best.pt"
     TOK_PATH   = "dataset_remi/tokenizer.json"
     OUT_DIR    = Path("generated_midis")
+elif mode == "harmrole":
+    DATA_DIR   = Path("dataset_remi_harmrole")
+    MODEL_PATH = "runs_touhou_harmrole/best.pt"
+    TOK_PATH   = "dataset_remi_harmrole/tokenizer.json"
+    OUT_DIR    = Path("generated_midis_harmrole")
+elif mode == "harmrole_v2":
+    DATA_DIR   = Path("dataset_remi_harmrole_v2")
+    MODEL_PATH = "runs_touhou_harmrole_v2/best.pt"
+    TOK_PATH   = "dataset_remi_harmrole_v2/tokenizer.json"
+    OUT_DIR    = Path("generated_midis_harmrole_v2")
 else:
-    DATA_DIR  = Path("dataset_remi_baseline")
+    DATA_DIR   = Path("dataset_remi_baseline")
     MODEL_PATH = "runs_touhou_baseline/best.pt"
     TOK_PATH   = "dataset_remi_baseline/tokenizer.json"
     OUT_DIR    = Path("generated_midis_baseline")
@@ -27,10 +38,11 @@ OUT_DIR.mkdir(exist_ok=True)
 
 with open(DATA_DIR / "meta.json") as f:
     meta = json.load(f)
-vocab_size    = meta["vocab_size"]
-bar_pos_start = meta["bar_pos_start"]
-max_bars      = meta["max_bars"]
+vocab_size      = meta["vocab_size"]
+bar_pos_start   = meta["bar_pos_start"]
+max_bars        = meta["max_bars"]
 barpos_injected = meta.get("barpos_injected", True)
+harmrole_ids    = set(meta.get("harm_role_ids", {}).values())
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -143,9 +155,15 @@ def sample_next(logits, tokens):
     return int(si[0][torch.multinomial(sp[0], 1)])
 
 def to_decode(tokens):
-    if not barpos_injected:
-        return tokens
-    return [bar_none_id if t in bar_pos_range else t for t in tokens]
+    out = []
+    for t in tokens:
+        if t in harmrole_ids:
+            continue          # strip HarmRole tokens — not valid MIDI events
+        if barpos_injected and t in bar_pos_range:
+            out.append(bar_none_id)
+        else:
+            out.append(t)
+    return out
 
 def generate(seed):
     torch.manual_seed(seed)
